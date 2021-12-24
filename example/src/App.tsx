@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-lumi';
+import { multiply, Card, LumiThemeProvider } from 'react-native-lumi';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
@@ -11,9 +11,13 @@ export default function App() {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <LumiThemeProvider>
+      <Card>
+        <View style={styles.container}>
+          <Text>Result: {result}</Text>
+        </View>
+      </Card>
+    </LumiThemeProvider>
   );
 }
 
